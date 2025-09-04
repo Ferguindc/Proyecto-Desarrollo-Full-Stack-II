@@ -1,12 +1,15 @@
 {
 	"folders": [
 		{
+			"name": "Proyecto-Desarrollo-Full-Stack-II",
 			"path": "."
 		},
 		{
+			"name": "bootstrap-5.3.8-dist",
 			"path": "../../../Desktop/portafolio/paginalol/bootstrap-5.3.8-dist"
 		},
 		{
+			"name": "img",
 			"path": "../../../Desktop/portafolio/paginalol/img"
 		}
 	],
