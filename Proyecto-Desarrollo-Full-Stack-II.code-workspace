@@ -10,5 +10,8 @@
 			"path": "../../../Desktop/portafolio/paginalol/img"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Proyecto-Desarrollo-Full-Stack-II",
+		"liveServer.settings.port": 5501
+	}
 }
