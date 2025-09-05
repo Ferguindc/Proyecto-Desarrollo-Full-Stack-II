@@ -1,3 +1,23 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto; /* empuja el footer hacia abajo */
+}
+.btn-ini{
+  background-color: black;
+  border: 1px solid;
+  border-radius: 10%;
+  padding: 0 10 10 0;
+  margin: 0 10 10 0;
+}
 .colornav{
     background-color: black;
 }
@@ -153,8 +173,11 @@ object-fit: cover;   /* ajusta la imagen al contenedor sin deformar */
   margin-right: 25px;
 }
 .d-flex{
-  margin-right: 100px;
+  margin-right: 20px;
   
+}
+.logo{
+  cursor: pointer;
 }
 
 /* Reemplaza todo el CSS del carrusel de video en tu style.css con esto */
@@ -362,4 +385,8 @@ object-fit: cover;   /* ajusta la imagen al contenedor sin deformar */
     top: -15px;
     right: -10px;
     text-shadow: 0 0 10px black;
+}
+.footer a:hover {
+  color: #0d6efd; /* azul de Bootstrap */
+  transition: color 0.3s;
 }

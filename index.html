@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
 
@@ -17,7 +19,7 @@
 </nav>
     <nav class="navbar colornav navbar-expand-lg bg-body-tertiary opacity-20 "data-bs-theme="dark">
   <div class="container-fluid " >
-    <a class="navbar-brandcolornav" href="#">Navbar</a>
+    <a href="index.html"> <img src="img/LOGODEF (2).png" alt="Bootstrap" width="160" height="80" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,14 +27,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Cuadros</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="True">
+            Productos
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -42,16 +44,17 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link " aria-disabled="true">Sobre nosotros</a>
         </li>
       </ul>
       <a class="navbar-brand" href="#">
-      <img src="img/LOGODEF (2).png" alt="Bootstrap" width="160" height="80">
+      
     </a>
       <form class="d-flex" role="search" >
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-white" type="submit">Search</button>
       </form>
+      <a href="sesion.html"><button class="btn-ini" >Iniciar Sesión</button></a>
     </div>
   </div>
 </nav>
@@ -267,7 +270,47 @@
         <img src="" alt="Premio Especial" id="imagen-premio">
     </div>
 </div>
-  
+<footer class="footer bg-dark text-light pt-4">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Columna 1 -->
+      <div class="col-md-4 mb-3">
+        <h5>Mi Sitio</h5>
+        <p>
+          Descripción breve de tu página o empresa.  
+          Puedes poner dirección o un pequeño texto aquí.
+        </p>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4 mb-3">
+        <h5>Enlaces útiles</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Servicios</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Acerca de</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4 mb-3">
+        <h5>Síguenos</h5>
+        <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3 border-top pt-3">
+      <p class="mb-0">&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
 
     <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
