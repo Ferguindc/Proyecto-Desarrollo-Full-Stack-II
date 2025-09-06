@@ -225,4 +225,28 @@ document.addEventListener('DOMContentLoaded', () => {
     modalImagenOverlay.addEventListener('click', (e) => {
         if (e.target === modalImagenOverlay) cerrarPremioImagen();
     });
+
+
+    
 });
+
+// inicio de sesión y credenciales
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+  
+        const user = document.getElementById('username').value.trim();
+        const pass = document.getElementById('password').value.trim();
+  
+        if (user === 'admin' && pass === 'admin') { /// si quieres cambiarle la contraseña ya sabes como
+          window.location.href = 'adminpagina.html'; 
+        } else {
+          document.getElementById('loginError').textContent =
+            'Usuario o contraseña incorrectos';
+        }
+      });
+    }
+  });
+  
