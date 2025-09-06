@@ -6,30 +6,35 @@
     <link rel="stylesheet" href="style2.css">
     <title>inicio de sesion</title>
 </head>
+<script src="app.js" defer></script>
 <body>
     <div class="fondo">
-        <img src="/img/makima.png" alt="">
-        <img src="/img/power.png" alt="">
+        <img src="img\makima.png" alt="">
+        <img src="img\power.png" alt="">
 
     </div>
+
+
   <div class="formulario">
     <h1>Inicio de Sesion SIGMA</h1> 
-    <form method="post">
+    <form id="loginForm">
         <div class="username">
-            <input type="text" required>
+            <input type="text" id="username" required>
             <label>
                 Nombre de usuario
             </label>
         </div>
         <div class="username">
-            <input type="password" required>
-            <label>contraseña</label>
+            <input type="password" id="password" required>
+            <label>
+                Contraseña
+            </label>
         </div>
         <div class="recordar"> Olvido su contraseña?</div>
-        <input type="submit" value="Iniciar">
+        <p id="loginError" style="color:red;"></p>
+        <input type="submit" value="Iniciar sesión">
         <div class="registrarse">
-            quiero hacer el <a href="#">registro</a>
-
+            No tienes cuenta? Registrate  <a href="#">aquí!</a>
         </div>
     </form>
   </div>
