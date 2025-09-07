@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="single-style.css">
+</head>
+<body>
+
+    <nav class="navbar colornav navbar-expand-lg bg-body-tertiary opacity-20 "data-bs-theme="dark">
+  <div class="container-fluid " >
+    <a href="index.html"> <img src="img/LOGODEF (2).png" alt="Bootstrap" width="160" height="80" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cuadros.html">Cuadros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " aria-disabled="disable">Sobre nosotros</a>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="#">
+      
+    </a>
+      <form class="d-flex" role="search" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-white" type="submit">Search</button>
+      </form>
+      <a href="sesion.html"><button class="btn-ini" >Iniciar Sesión</button></a>
+    </div>
+  </div>
+</nav>
+    <div class="container my-5">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-lg-6 col-md-6">
+                <div class="product-gallery">
+                    <img src="img/293581278_145413034816483_8475974826237850925_n.jpg" id="main-product-image" class="img-fluid main-image mb-3" alt="Polerón Gojo Satoru vista frontal">
+                    
+                    <div class="thumbnail-images d-flex justify-content-center">
+                        
+                        <img src="img/293581278_145413034816483_8475974826237850925_n.jpg" class="img-thumbnail mx-1 thumbnail-image active" alt="Vista frontal" 
+                             data-large-src="img/293581278_145413034816483_8475974826237850925_n.jpg">
+                        
+                        <img src="img/293597389_1713270979034270_4651813494339530547_n.jpg" class="img-thumbnail mx-1 thumbnail-image" alt="Vista manga" 
+                             data-large-src="img/293597389_1713270979034270_4651813494339530547_n.jpg">
+                        
+                        <img src="img/satoru.png" class="img-thumbnail mx-1 thumbnail-image" alt="Vista espalda" 
+                             data-large-src="img/satoru.png">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6">
+                <h1 class="product-title">Camiseta "Olas" Premium</h1>
+                <div class="product-price mb-3">
+                    <span class="new-price">$1,990</span>
+                    <span class="old-price">$2,500</span>
+                </div>
+                <p class="product-description">
+                    Una camiseta cómoda y con estilo, fabricada con 100% algodón orgánico. Perfecta para cualquier ocasión, con un estampado duradero que no se desvanece.
+                </p>
+
+                <div class="mb-4">
+                    <label for="size-selector" class="form-label fw-bold">Talla:</label>
+                    <div id="size-selector" class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary size-btn" data-size="S">S</button>
+                        <button class="btn btn-outline-secondary size-btn" data-size="M">M</button>
+                        <button class="btn btn-outline-secondary size-btn" data-size="L">L</button>
+                        <button class="btn btn-outline-secondary size-btn" data-size="XL">XL</button>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="quantity-input" class="form-label fw-bold">Cantidad:</label>
+                    <div class="input-group quantity-selector" style="max-width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" id="btn-minus">-</button>
+                        <input type="text" id="quantity-input" class="form-control text-center" value="1" readonly>
+                        <button class="btn btn-outline-secondary" type="button" id="btn-plus">+</button>
+                    </div>
+                </div>
+
+                <button id="add-to-cart-btn" class="btn btn-primary btn-lg w-100"><i class="bi bi-cart-plus-fill me-2"></i>Añadir al carrito</button>
+            </div>
+            </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Detalles Adicionales</h3>
+                <div class="accordion" id="product-details-accordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Descripción Completa
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#product-details-accordion">
+                        <div class="accordion-body">
+                          Esta camiseta ha sido diseñada pensando en la comodidad y la durabilidad. El corte es moderno y se ajusta perfectamente al cuerpo sin ser demasiado apretado. El estampado utiliza una técnica de serigrafía de alta calidad para garantizar que los colores se mantengan vivos lavado tras lavado.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Material y Cuidado
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#product-details-accordion">
+                        <div class="accordion-body">
+                          <strong>Material:</strong> 100% Algodón Orgánico Peinado.<br>
+                          <strong>Cuidado:</strong> Lavar a máquina con agua fría, del revés. No usar blanqueador. Secar a baja temperatura o colgar para secar.
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer bg-dark text-light pt-4">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Columna 1 -->
+      <div class="col-md-4 mb-3">
+        <h5>Sobre Crimewave</h5>
+        <p>
+          Crimewave es un sitio de venta de ropa estilo anime-streetwear y alternativa con diseños originales hechas por ferguinx. 
+        </p>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4 mb-3">
+        <h5>Enlaces útiles</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Servicios</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Acerca de</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4 mb-3">
+        <h5>Síguenos</h5>
+        <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="https://www.instagram.com/crimewave.store/?hl=es" class="text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3 border-top pt-3">
+      <p class="mb-0">&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="single-script.js"></script>
+</body>
+</html>
