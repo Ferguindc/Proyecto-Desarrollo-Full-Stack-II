@@ -4,7 +4,6 @@ body {
   color: #e0e0e0;
 }
 
-/* Sidebar scroll para mobile */
 .sidebar {
   height: 100%;
   overflow-y: auto;
@@ -22,7 +21,6 @@ body {
   color: #fff !important;
 }
 
-/* Formularios */
 .form-admin {
   max-width: 500px;
   margin-top: 20px;
@@ -44,7 +42,6 @@ body {
   resize: vertical;
 }
 
-/* Botones */
 .form-admin button {
   margin-top: 15px;
   background-color: #444;
@@ -55,7 +52,6 @@ body {
   background-color: #666;
 }
 
-/* Tabla de productos */
 .table-dark th,
 .table-dark td {
   border-color: #444;
@@ -70,4 +66,8 @@ body {
   width: auto;   
   display: block;
   margin: 0 auto;
+  border: 0 !important;      
+  outline: 0 !important;     
+  border-radius: 8px;       
+  background-color: transparent; 
 }
