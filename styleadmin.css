@@ -1,9 +1,9 @@
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: black;
+  color: beige;
 }
 
+/* barra lateral */
 .sidebar {
   height: 100%;
   overflow-y: auto;
@@ -21,6 +21,7 @@ body {
   color: #fff !important;
 }
 
+/* formularios */
 .form-admin {
   max-width: 500px;
   margin-top: 20px;
@@ -61,13 +62,14 @@ body {
   background-color: #333;
 }
 
+
 .img-tabla {
-  height: 80px;  
-  width: auto;   
+  height: 80px;
+  width: auto;
   display: block;
   margin: 0 auto;
-  border: 0 !important;      
-  outline: 0 !important;     
-  border-radius: 8px;       
-  background-color: transparent; 
+  border: 0 !important; /* eran para q la preview se mostrara sin bordes pero jamas sirvió la wea */
+  outline: 0 !important;  /* eran para q la preview se mostrara sin bordes pero jamas sirvió la wea */
+  border-radius: 8px;
+  background-color: transparent; /* eran para q la preview se mostrara sin bordes pero jamas sirvió la wea */
 }
