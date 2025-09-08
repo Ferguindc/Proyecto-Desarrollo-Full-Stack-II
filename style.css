@@ -1,3 +1,4 @@
+
 html, body {
   height: 100%;
   margin: 0;
@@ -6,29 +7,29 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 
 .footer {
   margin-top: auto; /* empuja el footer hacia abajo */
 }
 
-.colornav{
-    background-color: black;
+.colornav {
+  background-color: black;
 }
 
-/* style.css */
 .carousel-item img {
-  height: 750px;         /* Ajusta el alto que quieras (ej: 400px, 500px, etc.) */
-  object-fit: cover;     /* Recorta la imagen manteniendo proporción */
+  height: 750px;
+  object-fit: cover;
 }
+
 .tamañoletra {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;
   color: black;
 }
+
 .productos-destacados {
   text-align: center;
   margin: 40px 0;
@@ -49,18 +50,24 @@ body {
 
 .slider {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto; /* Cambiado a auto para que sea scrolleable en móvil */
   scroll-behavior: smooth;
   gap: 20px;
   width: 90%;
   margin: auto;
   transition: transform 0.5s ease;
   will-change: transform;
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+  scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome/Safari */
 }
 
 .card {
-  width: 300px;          /* un poco más grande */
-  height: 400px;         /* cuadrada */
+  width: 300px;
+  height: 400px;
   flex: none;
   position: relative;
   border-radius: 8px;
@@ -70,22 +77,19 @@ body {
 .card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* mantiene proporción y recorta exceso */
+  object-fit: cover;
   display: block;
 }
 
-
-
 .card-info {
   position: absolute;
-  bottom: 0; /* Lo pegamos a la parte inferior de la tarjeta */
-  left: 0;   /* Lo alineamos a la izquierda */
-  right: 0;  /* Lo extendemos hasta la derecha para que ocupe todo el ancho */
-  
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con 60% de opacidad */
-  color: white; /* El color del texto sigue siendo blanco, pero ahora resalta */
-  padding: 15px; /* Añadimos espacio interno para que se vea mejor */
-  text-align: center; /* Centramos el título y el botón */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  text-align: center;
 }
 
 .card-info h3 {
@@ -120,39 +124,42 @@ body {
   margin-left: 10px;
 }
 
-.imagenweb{
+.imagenweb {
   display: flex;
-  justify-content: center; /* Centra horizontal */
-  align-items: center;     /* Centra vertical (si el contenedor tiene altura) */
-  height: 200px ;      
+  justify-content: center;
+  align-items: center;
+  height: 200px;
   padding-top: 22px;
   padding-bottom: 60px;
-
 }
+
 .imagenweb img {
   width: 1000px;
-  height: 200px;      /* mantiene proporción */
+  height: 200px;
+  object-fit: cover; /* Añadido por si acaso */
 }
+
 .contenedor {
   display: flex;
   width: 100%;
-  height: 500px;  /* alto fijo para que se vean iguales */
+  height: 500px;
 }
-.padin{
+
+.padin {
   padding-top: 70px;
   padding-bottom: 60px;
 }
 
 .col {
-  flex: 1;             /* cada columna ocupa 50% */
-  position: relative;  /* para posicionar el texto encima */
+  flex: 1;
+  position: relative;
   overflow: hidden;
 }
 
 .col img {
- width: 100%;
- height: 100%;
-object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .texto {
@@ -175,18 +182,18 @@ object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
   border-radius: 20px;
   cursor: pointer;
 }
-.navbar-brand img{
+
+.navbar-brand img {
   margin-right: 25px;
 }
-.d-flex{
+
+.d-flex {
   margin-right: 20px;
-  
-}
-.logo{
-  cursor: pointer;
 }
 
-/* Reemplaza todo el CSS del carrusel de video en tu style.css con esto */
+.logo {
+  cursor: pointer;
+}
 
 .shop-feed {
   text-align: center;
@@ -200,40 +207,36 @@ object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
 }
 
 .slider-wrapper {
-  width: 90%; /* Hacemos que ocupe casi toda la pantalla */
-  max-width: 1200px; /* Pero con un límite */
+  width: 90%;
+  max-width: 1200px;
   overflow: hidden;
 }
 
-/* LA MAGIA DEL SCROLL SNAP COMIENZA AQUÍ */
 #video-slider {
   display: flex;
-  /* Habilitamos el scroll horizontal */
   overflow-x: auto;
-  /* Habilitamos el "snap" obligatorio en el eje X */
   scroll-snap-type: x mandatory;
-  /* Ocultamos la barra de scroll */
-  scrollbar-width: none; /* Para Firefox */
-  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
-  /* Padding para que el primer y último video puedan centrarse */
-  padding: 20px 40%; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px 40%;
 }
 
 #video-slider::-webkit-scrollbar {
-  display: none; /* Para Chrome, Safari y Opera */
+  display: none;
 }
 
 .video-slide {
-  flex: 0 0 250px; /* Ancho base del slide */
+  flex: 0 0 250px;
   height: 350px;
   margin: 0 10px;
   border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: center;
-  transition: transform 0.4s ease, filter 0.4s ease; /* Añadimos filter para un efecto más suave */
-  transform: scale(0.9); /* Por defecto, los videos inactivos son más pequeños */
-  filter: brightness(0.7); /* Los videos inactivos son un poco más oscuros */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transform: scale(0.9);
+  filter: brightness(0.7);
 }
+
 .video-slide video {
   width: 100%;
   height: 100%;
@@ -241,13 +244,12 @@ object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
   display: block;
 }
 
-/* El video activo (el del centro) será más grande */
 .video-slide.active {
-  transform: scale(1.1); /* El video activo (del centro) se agranda */
-  filter: brightness(1); /* Vuelve a su brillo normal */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Agregamos una sombra para destacarlo */
+  transform: scale(1.1);
+  filter: brightness(1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
-/* Estilos para los botones */
+
 .btn.prev-video, .btn.next-video {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
@@ -262,151 +264,90 @@ object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
   align-items: center;
 }
 
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 1; transition: opacity 0.3s ease; }
+.modal-overlay.hidden { opacity: 0; pointer-events: none; }
+.modal-contenido { background: white; padding: 20px 30px; border-radius: 15px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
+.cerrar-modal { position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; color: #555; cursor: pointer; }
+.ruleta-container { position: relative; width: 250px; height: 250px; margin: 20px auto; }
+.ruleta-puntero { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 30px solid #d9534f; z-index: 10; }
+#ruleta-img { width: 100%; height: 100%; transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1); }
+#boton-girar { background-color: #5cb85c; color: white; border: none; padding: 12px 25px; font-size: 18px; font-weight: bold; border-radius: 25px; cursor: pointer; transition: background-color 0.2s; }
+#boton-girar:disabled { background-color: #999; cursor: not-allowed; }
+.resultado-ruleta { margin-top: 15px; font-size: 16px; font-weight: bold; min-height: 24px; }
+#modal-imagen-overlay { z-index: 1001; }
+.modal-contenido-imagen { background: transparent; padding: 0; max-width: 600px; width: 90%; position: relative; }
+#imagen-premio { width: 100%; border-radius: 10px; border: 3px solid white; }
+#modal-imagen-overlay .cerrar-modal { color: white; font-size: 40px; top: -15px; right: -10px; text-shadow: 0 0 10px black; }
 
-/* El fondo oscuro que cubre toda la página */
-.modal-overlay {
-    position: fixed; /* Se queda fijo en la pantalla */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Se asegura de que esté por encima de todo */
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
+.carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(25%) sepia(98%) saturate(5000%) hue-rotate(200deg); width: 110px; height: 110px; }
+.footer a:hover { color: #0d6efd; transition: color 0.3s; }
 
-/* Clase para ocultar el modal */
-.modal-overlay.hidden {
-    opacity: 0;
-    pointer-events: none; /* No se puede hacer clic cuando está oculto */
-}
 
-/* El cuadro blanco del contenido del modal */
-.modal-contenido {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    position: relative; /* Para posicionar el botón de cerrar */
-}
+@media (max-width: 768px) {
 
-/* Botón de cerrar (la 'X') */
-.cerrar-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #555;
-    cursor: pointer;
-}
+  /* --- AJUSTES GENERALES --- */
+  .titulo {
+    font-size: 18px; /* Títulos un poco más pequeños */
+  }
 
-/* Contenedor de la ruleta (para posicionar el puntero) */
-.ruleta-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 20px auto;
-}
+  /* --- CARRUSEL PRINCIPAL --- */
+  .carousel-item img {
+    height: 300px; /* Altura mucho más razonable para móviles */
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 50px; 
+    height: 50px;
+  }
+    
+  /* --- SLIDER DE PRODUCTOS --- */
+  .slider {
+    width: 100%; 
+    padding: 0 15px; 
+    box-sizing: border-box;
+  }
+  .card {
+    width: 220px; 
+    height: 320px;
+  }
+  .slider-container .btn {
+    display: none; 
+  }
+  
+  /* --- IMAGEN BANNER --- */
+  .imagenweb {
+    height: auto; 
+    padding: 20px 0;
+  }
+  .imagenweb img {
+    width: 90%; 
+    height: auto; 
+  }
 
-/* El puntero o flecha que indica el premio */
-.ruleta-puntero {
-    position: absolute;
-    top: -10px; /* Lo posiciona justo encima de la ruleta */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 30px solid #d9534f; /* Color rojo */
-    z-index: 10;
-}
+  /* --- SECCIÓN DE 2 COLUMNAS --- */
+  .contenedor {
+    flex-direction: column; 
+    height: auto; /* La altura ya no es fija */
+  }
 
-/* La imagen de la ruleta */
-#ruleta-img {
-    width: 100%;
-    height: 100%;
-    /* La transición es la clave para la animación de giro */
-    transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
+  .col {
+    height: 300px; 
+  }
 
-/* El botón para girar */
-#boton-girar {
-    background-color: #5cb85c; /* Verde */
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-#boton-girar:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-}
-
-/* El texto donde aparecerá el resultado */
-.resultado-ruleta {
-    margin-top: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    min-height: 24px;
-}
-/*=============== ESTILOS PARA EL MODAL DE IMAGEN ===============*/
-
-/* Hacemos que el z-index sea mayor para que aparezca por encima del modal de la ruleta */
-#modal-imagen-overlay {
-    z-index: 1001; 
-}
-
-.modal-contenido-imagen {
-    background: transparent; /* Fondo transparente para que solo se vea la imagen */
-    padding: 0;
-    max-width: 600px; /* Ancho máximo de la imagen */
-    width: 90%;
-    position: relative;
-}
-
-#imagen-premio {
-    width: 100%;
-    border-radius: 10px;
-    border: 3px solid white;
-}
-
-/* Posicionamos el botón de cerrar relativo a la imagen */
-#modal-imagen-overlay .cerrar-modal {
-    color: white;
-    font-size: 40px;
-    top: -15px;
-    right: -10px;
-    text-shadow: 0 0 10px black;
-}
-/* Flechas azules para el carrusel */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(25%) sepia(98%) saturate(5000%) hue-rotate(200deg);
-  width: 110px;
-  height: 110px;
-}
-
-/* Imágenes del carrusel */
-.carousel-item img {
-  height: 750px;
-  object-fit: cover;
-}
-
-.footer a:hover {
-  color: #0d6efd; /* azul de Bootstrap */
-  transition: color 0.3s;
+ 
+  #video-slider {
+    padding: 20px 30%; 
+  }
+  .video-slide {
+    flex: 0 0 180px; /* Videos más pequeños */
+    height: 280px;
+  }
+  .slider-container-video .btn {
+      display: none; 
+  }
+    
+  /* --- FOOTER --- */
+  .footer .col-md-4 {
+      text-align: center; 
+      margin-bottom: 20px;
+  }
 }
