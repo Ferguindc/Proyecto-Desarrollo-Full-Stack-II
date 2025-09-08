@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Productos con Filtros</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+   
+</nav>
+    <nav class="navbar colornav navbar-expand-lg bg-body-tertiary opacity-20 "data-bs-theme="dark">
+  <div class="container-fluid " >
+    <a href="index.html"> <img src="img/LOGODEF (2).png" alt="Bootstrap" width="160" height="80" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cuadros.html">Cuadros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " aria-disabled="true">Sobre nosotros</a>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="#">
+      
+    </a>
+      <form class="d-flex" role="search" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-white" type="submit">Search</button>
+      </form>
+      <a href="sesion.html"><button class="btn-ini" >Iniciar Sesión</button></a>
+    </div>
+  </div>
+</nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <div class="p-4 bg-white rounded-3 shadow-sm">
+                    <h4 class="mb-4">Filtros</h4>
+                    
+                    <div class="mb-4 sidebar-filter">
+                        <h5>Categorías</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="text-decoration-none text-dark d-block mb-2" data-category="todos">Todos los productos</a></li>
+                            <li><a class="text-decoration-none text-dark d-block mb-2" data-category="ropa">Ropa</a></li>
+                            <li><a class="text-decoration-none text-dark d-block" data-category="cuadros">Cuadros</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+
+                    <div class="mb-4">
+                        <h5>Precio</h5>
+                        <label for="priceRange" class="form-label">Hasta: <span id="priceValue">$50000</span></label>
+                        <input type="range" class="form-range" min="0" max="50000" step="1000" id="priceRange" value="50000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input id="searchInput" type="text" class="form-control" placeholder="Buscar productos...">
+                    </div>
+                    <select class="form-select ms-3" id="sortBy" style="max-width: 200px;">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-asc">Precio: de menor a mayor</option>
+                        <option value="price-desc">Precio: de mayor a menor</option>
+                    </select>
+                </div>
+
+                <div id="product-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
+                    <div class="col product-item" data-category="ropa" data-price="24990" data-name="Camiseta Olas">
+                    <a href="single.html?product=camiseta-olas" class="product-link">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Poleron Satoru Gojo</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$24,990</span>
+                                </p>
+                                <div class="btn btn-primary w-100 mt-2">Ver detalles</div>
+                            </div>
+                        </div>
+                    </a>
+                     </div>
+                    <div class="col product-item" data-category="ropa" data-price="1990" data-name="Camiseta Olas">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camiseta "Olas"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$1,990</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col product-item" data-category="ropa" data-price="1990" data-name="Camiseta Olas">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camiseta "Olas"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$1,990</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col product-item" data-category="ropa" data-price="1990" data-name="Camiseta Olas">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camiseta "Olas"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$1,990</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col product-item" data-category="ropa" data-price="1990" data-name="Camiseta Olas">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camiseta "Olas"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$1,990</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col product-item" data-category="ropa" data-price="1990" data-name="Camiseta Olas">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-danger">Oferta</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Camiseta Estampada">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camiseta "Olas"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="old-price me-2">$2,500</span>
+                                    <span class="new-price">$1,990</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col product-item" data-category="cuadros" data-price="15000" data-name="Cuadro Amanecer">
+                        <div class="card h-100 product-card">
+                            <span class="badge bg-success">Nuevo</span>
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Cuadro Abstracto">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Cuadro "Amanecer"</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="new-price">$15,000</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col product-item" data-category="ropa" data-price="5500" data-name="Jeans Clasicos">
+                        <div class="card h-100 product-card">
+                            <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Jeans Clásicos">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Jeans Clásicos</h5>
+                                <p class="card-text text-muted mt-auto">
+                                    <span class="new-price">$5,500</span>
+                                </p>
+                                <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col product-item" data-category="cuadros" data-price="18500" data-name="Pintura Bodegon">
+                         <div class="card h-100 product-card">
+                             <img src="img/photo-1556011299-650a931cbfae.avif" class="card-img-top" alt="Pintura Bodegón">
+                             <div class="card-body d-flex flex-column">
+                                 <h5 class="card-title">Pintura "Bodegón"</h5>
+                                 <p class="card-text text-muted mt-auto">
+                                     <span class="old-price me-2">$22,000</span>
+                                     <span class="new-price">$18,500</span>
+                                 </p>
+                                 <a href="#" class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+                 <div id="no-results" class="text-center p-5" style="display: none;">
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar tus filtros de búsqueda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-light pt-4">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Columna 1 -->
+      <div class="col-md-4 mb-3">
+        <h5>Sobre Crimewave</h5>
+        <p>
+          Crimewave es un sitio de venta de ropa estilo anime-streetwear y alternativa con diseños originales hechas por ferguinx. 
+        </p>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4 mb-3">
+        <h5>Enlaces útiles</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Servicios</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Acerca de</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4 mb-3">
+        <h5>Síguenos</h5>
+        <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="https://www.instagram.com/crimewave.store/?hl=es" class="text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3 border-top pt-3">
+      <p class="mb-0">&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

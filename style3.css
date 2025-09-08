@@ -72,4 +72,14 @@ body {
 .product-card:hover .btn {
     opacity: 1; /* Se vuelve visible */
     transform: translateY(0); /* Vuelve a su posición original */
+}/* Añade esto a tu style3.css */
+.product-link {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto normal */
+}
+
+.product-link:hover .card {
+  /* Mantenemos el efecto hover que ya tenías */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }

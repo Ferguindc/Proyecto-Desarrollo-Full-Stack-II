@@ -1,0 +1,72 @@
+
+
+body {
+    background-color: #f8f9fa;
+}
+.tamañoletra {
+  margin: 0;
+  padding: 0;
+  font-size: 0.6rem;
+}
+/* Galería de Imágenes */
+.main-image {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+    /* Le damos una altura máxima para que no sea demasiado grande en pantallas muy altas */
+    max-height: 550px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-images .img-thumbnail {
+    cursor: pointer;
+    border-width: 2px;
+    transition: border-color 0.3s ease;
+    /* Hacemos las miniaturas un poco más pequeñas para dar más protagonismo a la principal */
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.thumbnail-images .img-thumbnail.active {
+    border-color: #0d6efd; /* Color primario de Bootstrap */
+}
+
+/* Detalles del Producto */
+.product-title {
+    font-weight: 700;
+}
+
+.product-price .new-price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.product-price .old-price {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: #6c757d;
+    margin-left: 10px;
+}
+
+/* Selector de Tallas */
+.size-selector .size-btn {
+    min-width: 45px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.size-selector .size-btn.selected {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+/* Selector de Cantidad */
+.quantity-selector .form-control[readonly] {
+    background-color: #fff;
+}
+
+.quantity-selector .btn {
+    z-index: 1;
+}

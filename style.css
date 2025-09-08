@@ -123,9 +123,9 @@ body {
   justify-content: center; /* Centra horizontal */
   align-items: center;     /* Centra vertical (si el contenedor tiene altura) */
   height: 200px ;      
-  padding-top: 100px;   /* Opcional: ocupa toda la pantalla */
-  padding-bottom: 100px;
-  margin-bottom: 20px;
+  padding-top: 22px;
+  padding-bottom: 60px;
+
 }
 .imagenweb img {
   width: 1000px;
@@ -135,6 +135,10 @@ body {
   display: flex;
   width: 100%;
   height: 500px;  /* alto fijo para que se vean iguales */
+}
+.padin{
+  padding-top: 70px;
+  padding-bottom: 60px;
 }
 
 .col {
@@ -146,7 +150,7 @@ body {
 .col img {
  width: 100%;
  height: 100%;
-object-fit: cover;   /* ajusta la imagen al contenedor sin deformar */
+object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
 }
 
 .texto {
@@ -255,7 +259,7 @@ object-fit: cover;   /* ajusta la imagen al contenedor sin deformar */
   justify-content: center;
   align-items: center;
 }
-/*=============== ESTILOS PARA EL MODAL DE RULETA ===============*/
+
 
 /* El fondo oscuro que cubre toda la página */
 .modal-overlay {
