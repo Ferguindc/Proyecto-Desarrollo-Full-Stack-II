@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <title>inicio de sesion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión</title>
+  <link rel="stylesheet" href="style2.css">
 </head>
-<script src="app.js" defer></script>
 <body>
-    <div class="fondo">
-       <a href="index.html"><img src="img\makima.png" alt=""></a>
-      <a href="index.html"><img src="img\power.png" alt=""></a>
 
+  <div class="contenedor-principal">
+    
+    <div class="imagen-lateral">
+      <a href="index.html"><img src="img/power.png" alt="Power"></a> 
     </div>
 
-  <div class="formulario">
-    <h1>Inicio de Sesion SIGMA</h1> 
-    <form id="loginForm">
+    <div class="formulario">
+      <h1>Inicio de Sesión SIGMA</h1>
+      <form id="loginForm">
         <div class="username">
-            <input type="text" id="username" required>
-            <label>
-                Nombre de usuario
-            </label>
+          <input type="text" id="username" required>
+          <label>Nombre de usuario</label>
         </div>
         <div class="username">
-            <input type="password" id="password" required>
-            <label>
-                Contraseña
-            </label>
+          <input type="password" id="password" required>
+          <label>Contraseña</label>
         </div>
-        <div class="recordar"> Olvido su contraseña?</div>
+        <div class="recordar">¿Olvidó su contraseña?</div>
         <p id="loginError" style="color:red;"></p>
         <input type="submit" value="Iniciar sesión">
         <div class="registrarse">
-            No tienes cuenta? Registrate  <a href="#">aquí!</a>
+          ¿No tienes cuenta? Regístrate <a href="#">aquí!</a>
         </div>
-    </form>
+      </form>
+    </div>
+
+    <div class="imagen-lateral">
+      <a href="index.html"><img src="img/makima.png" alt="Makima"></a>
+    </div>
+
   </div>
-    
+
+  <script src="app.js" defer></script>
 </body>
 </html>

@@ -199,15 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     };
 
-    // --- EVENT LISTENERS ---
+   
 
-    // Mostrar modal de la ruleta
     setTimeout(mostrarModalRuleta, 1000);
 
-    // Girar la ruleta
+   
     botonGirar.addEventListener('click', girarRuleta);
 
-    // Cerrar modal de la ruleta
+ 
     cerrarModalBtn.addEventListener('click', ocultarModalRuleta);
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) ocultarModalRuleta();
@@ -230,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-// inicio de sesión y credenciales
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
