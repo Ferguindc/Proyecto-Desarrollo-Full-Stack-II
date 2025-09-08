@@ -6,7 +6,9 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 
 .footer {
   margin-top: auto; /* empuja el footer hacia abajo */
@@ -390,6 +392,20 @@ object-fit:cover;  /* ajusta la imagen al contenedor sin deformar */
     right: -10px;
     text-shadow: 0 0 10px black;
 }
+/* Flechas azules para el carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(25%) sepia(98%) saturate(5000%) hue-rotate(200deg);
+  width: 110px;
+  height: 110px;
+}
+
+/* Imágenes del carrusel */
+.carousel-item img {
+  height: 750px;
+  object-fit: cover;
+}
+
 .footer a:hover {
   color: #0d6efd; /* azul de Bootstrap */
   transition: color 0.3s;
