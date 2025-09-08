@@ -11,13 +11,7 @@ body {
 .footer {
   margin-top: auto; /* empuja el footer hacia abajo */
 }
-.btn-ini{
-  background-color: black;
-  border: 1px solid;
-  border-radius: 10%;
-  padding: 0 10 10 0;
-  margin: 0 10 10 0;
-}
+
 .colornav{
     background-color: black;
 }
@@ -81,9 +75,14 @@ body {
 
 .card-info {
   position: absolute;
-  bottom: 20px;
-  left: 40px;
-  color: white;
+  bottom: 0; /* Lo pegamos a la parte inferior de la tarjeta */
+  left: 0;   /* Lo alineamos a la izquierda */
+  right: 0;  /* Lo extendemos hasta la derecha para que ocupe todo el ancho */
+  
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con 60% de opacidad */
+  color: white; /* El color del texto sigue siendo blanco, pero ahora resalta */
+  padding: 15px; /* Añadimos espacio interno para que se vea mejor */
+  text-align: center; /* Centramos el título y el botón */
 }
 
 .card-info h3 {
