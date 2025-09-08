@@ -146,14 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // MODIFICAMOS EL ARRAY DE PREMIOS PARA INCLUIR TIPOS
     const premios = [
-        { tipo: 'texto', valor: '¡10% de Descuento!', min: 0, max: 22 },
-        { tipo: 'imagen', valor: 'img/gatito.jpg', min: 23, max: 180 },
-        { tipo: 'texto', valor: '¡25% de Descuento!', min: 181, max: 182},
-        { tipo: 'imagen', valor: 'img/ORIGINAL 2.png', min: 183, max: 190 },
-        { tipo: 'texto', valor: '¡ENVÍO GRATIS!', min: 191, max: 206 },
-        { tipo: 'texto', valor: '¡Vuelve a Intentar!', min: 207, max: 208 },
-        { tipo: 'texto', valor: '¡50% de Descuento!', min: 209, max: 210 },
-        { tipo: 'texto', valor: '¡Vuelve a Intentar!', min: 211, max: 212 }
+        { tipo: 'texto', valor: '¡10% de Descuento!', min: 0, max: 10 },
+        { tipo: 'imagen', valor: 'img/gatito.jpg', min: 11, max: 300 },
+        { tipo: 'texto', valor: '¡25% de Descuento!', min: 301, max: 302},
+        { tipo: 'imagen', valor: 'img/ORIGINAL 2.png', min: 303, max: 304},
+        { tipo: 'texto', valor: '¡ENVÍO GRATIS!', min: 305, max: 306 },
+        { tipo: 'texto', valor: '¡Vuelve a Intentar!', min: 307, max: 308 },
+        { tipo: 'texto', valor: '¡50% de Descuento!', min: 309, max: 310 },
+        { tipo: 'texto', valor: '¡Vuelve a Intentar!', min: 311, max: 360 }
     ];
 
     // --- Funciones para los modales ---
