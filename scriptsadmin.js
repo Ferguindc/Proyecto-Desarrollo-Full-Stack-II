@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const contenedorProductos = document.getElementById("productos");
   const contenedorAgregarProducto = document.getElementById("agregarProducto");
 
-  const productos = [];
+  const productos = []; // ya que no hay base de datos declaro arreglo para guardar los productos
 
-  // imagenes predefinidas que estan en la carpeta img
+  // imagenes predefinidas que estan en la carpeta img en caso de que no se suba alguna a la hora de añadir producto
   const obtenerImagenPorCategoria = (categoria) => {
     if (categoria === "Poleras") return "img/satoru 2.jpg";
     if (categoria === "Hoodies") return "img/togahoodie.jpg";
@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return "img/gatito.jpg";
   };
 
+
   const mostrarProductos = () => {
     if (productos.length === 0) {
-      return '<p>No hay productos agregados aún.</p>';
+      return '<p>No hay productos agregados aún.</p>'; // en caso de que no se hayan añadido productos aún, caso contrario, se muestra "tabla" que contiene los datos del producto.
     }
 
     let tabla = `
@@ -54,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return tabla;
   };
 
-  const mostrarFormularioAgregar = () => `
+  // logica para agregar productos en el apartado de "Productos"
+  const mostrarFormularioAgregar = () => ` 
     <h1>Añadir un Producto</h1>
     <form id="formAgregarProducto" class="form-admin">
       <label class="form-label" for="nombre">Nombre del producto</label>
@@ -106,7 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
   contenedorProductos.innerHTML = mostrarProductos();
   contenedorAgregarProducto.innerHTML = mostrarFormularioAgregar();
 
-  // boton pa eliminar los productos
+
+  // boton pa eliminar los productos en el apartado "Productos"
   const manejarEliminarProductos = () => {
     const botonesEliminar = contenedorProductos.querySelectorAll(".btn-eliminar");
     botonesEliminar.forEach(btn => {
@@ -120,9 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   };
-
   manejarEliminarProductos();
 
+  // boton pa agregar el producto en el apartado "Productos"
   contenedorAgregarProducto.addEventListener("click", (e) => {
     const fila = e.target.closest(".row");
     if (!fila) return;
@@ -172,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedorProductos.innerHTML = mostrarProductos();
         manejarEliminarProductos();
         mensaje.textContent = `Producto "${nombre}" agregado correctamente!`;
-        mensaje.style.color = "#00ff88";
+        mensaje.style.color = "green";
         formulario.reset();
         // dejar solo una fila de tallas 
         const contenedorT = contenedorAgregarProducto.querySelector("#contenedorTallas");
@@ -180,12 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       lector.readAsDataURL(inputImagen.files[0]);
     } else {
-      // sin imagen subida se usa la predefinida al en el codigo
+      // sin imagen subida se usa la predefinida en el codigo
       productos.push({ nombre, precio, tallas, categoria, descripcion, imagen });
       contenedorProductos.innerHTML = mostrarProductos();
       manejarEliminarProductos();
       mensaje.textContent = `Producto "${nombre}" agregado correctamente!`;
-      mensaje.style.color = "#00ff88";
+      mensaje.style.color = "green";
       formulario.reset();
       const contenedorT = contenedorAgregarProducto.querySelector("#contenedorTallas");
       contenedorT.innerHTML = contenedorT.firstElementChild.outerHTML;

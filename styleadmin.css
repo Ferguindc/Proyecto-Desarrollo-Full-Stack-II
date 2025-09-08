@@ -17,8 +17,8 @@ body {
 }
 
 .list-group-item:hover {
-  background-color: #333 !important;
-  color: #fff !important;
+  background-color: darkgray !important;
+  color: white !important;
 }
 
 /* formularios */
@@ -28,14 +28,14 @@ body {
 }
 
 .form-admin .form-label {
-  color: #ccc;
+  color: lightgray;
 }
 
 .form-admin .form-control,
 .form-admin .form-select,
 .form-admin textarea {
-  background-color: #2c2c2c;
-  color: #fff;
+  background-color: dimgray;
+  color: white;
   border: none;
 }
 
@@ -45,23 +45,22 @@ body {
 
 .form-admin button {
   margin-top: 15px;
-  background-color: #444;
-  color: #fff;
+  background-color: dimgray;
+  color: white;
 }
 
 .form-admin button:hover {
-  background-color: #666;
+  background-color: gray;
 }
 
 .table-dark th,
 .table-dark td {
-  border-color: #444;
+  border-color: dimgray;
 }
 
 .table-dark tbody tr:hover {
-  background-color: #333;
+  background-color: darkgray;
 }
-
 
 .img-tabla {
   height: 80px;
