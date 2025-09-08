@@ -24,7 +24,8 @@ body {
 .tamañoletra {
   margin: 0;
   padding: 0;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  color: black;
 }
 .productos-destacados {
   text-align: center;
