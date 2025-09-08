@@ -2,26 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const contenedorProductos = document.getElementById("productos");
   const contenedorAgregarProducto = document.getElementById("agregarProducto");
 
-  const productos = [];
+  const productos = []; // ya que no hay base de datos declaro arreglo para guardar los productos
 
-  // validación de imagenes predefinidas en caso de que no suban una
+  // imagenes predefinidas que estan en la carpeta img en caso de que no se suba alguna a la hora de añadir producto
   const obtenerImagenPorCategoria = (categoria) => {
-    if (categoria === "Poleras") {
-      return `img/satoru 2.jpg`;
-    } else if (categoria === "Hoodies") {
-      return `img/togahoodie.jpg`;
-    } else if (categoria === "AnimeBags") {
-      return `img/bolsaanime.png`;
-    } else if (categoria === "Cuadros") {
-      return `img/cuadroanime.png`;
-    } else {
-      return `img/gatito.jpg`;
-    }
+    if (categoria === "Poleras") return "img/satoru 2.jpg";
+    if (categoria === "Hoodies") return "img/togahoodie.jpg";
+    if (categoria === "AnimeBags") return "img/bolsaanime.png";
+    if (categoria === "Cuadros") return "img/cuadroanime.png";
+    return "img/gatito.jpg";
   };
+
 
   const mostrarProductos = () => {
     if (productos.length === 0) {
-      return '<p>No hay productos agregados aún.</p>';
+      return '<p>No hay productos agregados aún.</p>'; // en caso de que no se hayan añadido productos aún, caso contrario, se muestra "tabla" que contiene los datos del producto.
     }
 
     let tabla = `
@@ -42,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     productos.forEach((producto, indice) => {
-      let tallasHTML = producto.tallas.map(t => `${t.talla} x${t.cantidad}`).join("<br>");
+      const tallasHTML = (producto.tallas || []).map(t => `${t.talla} x${t.cantidad}`).join("<br>");
       tabla += `
         <tr>
           <td><img src="${producto.imagen}" class="img-tabla" alt="${producto.nombre}"></td>
@@ -60,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return tabla;
   };
 
-  const mostrarFormularioAgregar = () => `
+  // logica para agregar productos en el apartado de "Productos"
+  const mostrarFormularioAgregar = () => ` 
     <h1>Añadir un Producto</h1>
     <form id="formAgregarProducto" class="form-admin">
       <label class="form-label" for="nombre">Nombre del producto</label>
@@ -112,46 +108,48 @@ document.addEventListener("DOMContentLoaded", () => {
   contenedorProductos.innerHTML = mostrarProductos();
   contenedorAgregarProducto.innerHTML = mostrarFormularioAgregar();
 
-  // borrar productos
+
+  // boton pa eliminar los productos en el apartado "Productos"
   const manejarEliminarProductos = () => {
     const botonesEliminar = contenedorProductos.querySelectorAll(".btn-eliminar");
     botonesEliminar.forEach(btn => {
-      btn.addEventListener("click", e => {
+      btn.addEventListener("click", (e) => {
         const indice = parseInt(e.target.getAttribute("data-indice"));
-        productos.splice(indice, 1);
-        contenedorProductos.innerHTML = mostrarProductos();
-        manejarEliminarProductos();
+        if (!Number.isNaN(indice)) {
+          productos.splice(indice, 1);
+          contenedorProductos.innerHTML = mostrarProductos();
+          manejarEliminarProductos();
+        }
       });
     });
   };
-
   manejarEliminarProductos();
 
-  // tallas y cantidades
+  // boton pa agregar el producto en el apartado "Productos"
   contenedorAgregarProducto.addEventListener("click", (e) => {
     const fila = e.target.closest(".row");
     if (!fila) return;
 
-    // añadir opcion detallas
+    // agregar mas tallas
     if (e.target.classList.contains("btn-agregar-talla")) {
       const nuevaFila = fila.cloneNode(true);
-      nuevaFila.querySelector(".cantidad").value = 1;
+      const cantidadInput = nuevaFila.querySelector(".cantidad");
+      if (cantidadInput) cantidadInput.value = 1;
       contenedorAgregarProducto.querySelector("#contenedorTallas").appendChild(nuevaFila);
     }
 
-    // borrar opcion de tallas
+    // borrar tallas 
     if (e.target.classList.contains("btn-eliminar-talla")) {
       const contenedorTallas = contenedorAgregarProducto.querySelector("#contenedorTallas");
-      if (contenedorTallas.querySelectorAll(".row").length > 1) {
-        fila.remove();
-      }
+      const filas = contenedorTallas.querySelectorAll(".row");
+      if (filas.length > 1) fila.remove();
     }
   });
 
   const formulario = document.getElementById("formAgregarProducto");
-  const mnsj = document.getElementById("mensajeAgregarProducto");
+  const mensaje = document.getElementById("mensajeAgregarProducto");
 
-  formulario.addEventListener("submit", evento => {
+  formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim();
@@ -159,33 +157,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoria = document.getElementById("categoria").value;
     const descripcion = document.getElementById("descripcion").value.trim();
 
+    // recoger tallas
     const filasTallas = contenedorAgregarProducto.querySelectorAll("#contenedorTallas .row");
     const tallas = Array.from(filasTallas).map(fila => ({
       talla: fila.querySelector(".talla").value,
-      cantidad: parseInt(fila.querySelector(".cantidad").value)
-    }));
+      cantidad: parseInt(fila.querySelector(".cantidad").value, 10) || 0
+    })).filter(t => t.cantidad > 0);
 
     const inputImagen = document.getElementById("imagenProducto");
     let imagen = obtenerImagenPorCategoria(categoria);
+
     if (inputImagen.files && inputImagen.files[0]) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
+      const lector = new FileReader();
+      lector.onload = function(e) {
         imagen = e.target.result;
         productos.push({ nombre, precio, tallas, categoria, descripcion, imagen });
         contenedorProductos.innerHTML = mostrarProductos();
         manejarEliminarProductos();
-        mnsj.textContent = `Producto "${nombre}" agregado correctamente!`;
-        mnsj.style.color = "#00ff88";
+        mensaje.textContent = `Producto "${nombre}" agregado correctamente!`;
+        mensaje.style.color = "green";
         formulario.reset();
+        // dejar solo una fila de tallas 
+        const contenedorT = contenedorAgregarProducto.querySelector("#contenedorTallas");
+        contenedorT.innerHTML = contenedorT.firstElementChild.outerHTML;
       };
-      reader.readAsDataURL(inputImagen.files[0]);
+      lector.readAsDataURL(inputImagen.files[0]);
     } else {
+      // sin imagen subida se usa la predefinida en el codigo
       productos.push({ nombre, precio, tallas, categoria, descripcion, imagen });
       contenedorProductos.innerHTML = mostrarProductos();
       manejarEliminarProductos();
-      mnsj.textContent = `Producto "${nombre}" agregado correctamente!`;
-      mnsj.style.color = "#00ff88";
+      mensaje.textContent = `Producto "${nombre}" agregado correctamente!`;
+      mensaje.style.color = "green";
       formulario.reset();
+      const contenedorT = contenedorAgregarProducto.querySelector("#contenedorTallas");
+      contenedorT.innerHTML = contenedorT.firstElementChild.outerHTML;
     }
   });
 });
