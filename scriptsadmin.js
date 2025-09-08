@@ -159,16 +159,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // recoger tallas
     const filasTallas = contenedorAgregarProducto.querySelectorAll("#contenedorTallas .row");
-    const tallas = Array.from(filasTallas).map(fila => ({
-      talla: fila.querySelector(".talla").value,
-      cantidad: parseInt(fila.querySelector(".cantidad").value, 10) || 0
-    })).filter(t => t.cantidad > 0);
+    const tallas = [];
+    filasTallas.forEach(fila => {
+      const cantidad = parseInt(fila.querySelector(".cantidad").value, 10) || 0;
+      if (cantidad > 0) { 
+        const talla = fila.querySelector(".talla").value;
+        tallas.push({ talla, cantidad });
+      }
+    });
+    
 
     const inputImagen = document.getElementById("imagenProducto");
     let imagen = obtenerImagenPorCategoria(categoria);
 
     if (inputImagen.files && inputImagen.files[0]) {
-      const lector = new FileReader();
+      const lector = new FileReader(); // en caso de que suban foto
       lector.onload = function(e) {
         imagen = e.target.result;
         productos.push({ nombre, precio, tallas, categoria, descripcion, imagen });
