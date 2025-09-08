@@ -6,7 +6,9 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 
 .footer {
   margin-top: auto; /* empuja el footer hacia abajo */
